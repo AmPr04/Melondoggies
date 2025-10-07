@@ -11,13 +11,6 @@
   --gap:1rem;
 }
 
-.cinzel-<uniquifier> {
-  font-family: "Cinzel", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -158,3 +151,4 @@ concert-info {
   text-decoration: none;
 
 }   
+
