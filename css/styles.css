@@ -11,11 +11,18 @@
   --gap:1rem;
 }
 
+.cinzel-<uniquifier> {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family:"Cinzel Decorative", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:"Cinzel", "Cinzel Decorative", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:linear-gradient(180deg,#070707 0%, #343037 100%);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
@@ -149,4 +156,5 @@ concert-info {
   display: grid;
   gap: 0.5rem;
   text-decoration: none;
+
 }   
