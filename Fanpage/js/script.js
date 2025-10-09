@@ -8,14 +8,14 @@ const posts = [
   },
   {
     id: 2,
-    title: 'Top 10 tracks to study to',
-    excerpt: 'Curated mellow tracks that help you focus and relax.',
+    title: 'Top Melancholy tracks to headbang to',
+    excerpt: 'Curated upbeat tracks to thrash around to.',
     date: '2025-08-15'
   },
   {
     id: 3,
     title: 'Interview: Behind the studio door',
-    excerpt: 'We talk to the producer about the making of the record.',
+    excerpt: 'We talk to Melancholy about the making of the record.',
     date: '2025-07-28'
   }
 ];
@@ -192,10 +192,8 @@ function renderVinylShelf() {
     d.addEventListener('mouseenter', () => startPreview(track, d));
     d.addEventListener('mouseleave', () => stopPreview(track, d));
 
-    // Click plays full track
-    d.addEventListener('click', () => {
-      playTrack(track);
-    });
+    // Click plays full track (or toggles pause/play). Use a handler so we can start spinning immediately.
+    d.addEventListener('click', () => vinylClickHandler(track, d));
 
     shelf.appendChild(d);
   });
@@ -252,6 +250,34 @@ function playTrack(track) {
   currentTrackId = track.id;
   updatePlayingUI();
   trackInfo.textContent = `${track.title} — ${track.artist}`;
+}
+
+// Handle vinyl clicks: start spin immediately and either play via audio player (if playable)
+// or open external links (Spotify) in a new tab while showing a brief spin animation.
+function vinylClickHandler(track, elNode){
+  if(!track) return;
+  // visual: add playing class immediately for feedback
+  elNode.classList.add('playing');
+  // if the track.src looks like an audio file (ends with common audio ext) use playTrack
+  const isAudioFile = /\.(mp3|wav|ogg|m4a)(\?|$)/i.test(track.src);
+  if(isAudioFile){
+    playTrack(track);
+    return;
+  }
+  // If it's an external link (Spotify, etc), open in new tab and show a short spin
+  try{
+    window.open(track.src, '_blank', 'noopener');
+  }catch(e){
+    // fallback: navigate
+    window.location.href = track.src;
+  }
+  // keep spin for 2s as feedback, then remove (but do not change currentTrackId)
+  setTimeout(()=>{
+    // only remove if not actually playing
+    if(currentTrackId !== track.id){
+      elNode.classList.remove('playing');
+    }
+  }, 2000);
 }
 
 function updatePlayingUI() {
