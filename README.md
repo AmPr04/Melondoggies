@@ -1,5 +1,7 @@
 # Music Fan Blog (Static)
 
+https://ampr04.github.io/Melondoggies/
+
 This is a small static music fan blog template. It includes:
 
 - `index.html` — main page with posts and a playlist
@@ -19,3 +21,4 @@ Notes
 
 License: MIT
 # Melondoggies
+
