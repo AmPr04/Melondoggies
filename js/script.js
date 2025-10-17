@@ -2,9 +2,9 @@
 const posts = [
   {
     id: 1,
-    title: 'Album review: Eris',
-    excerpt: 'A deep dive into the textures and motifs of the new release.',
-    date: '2025-09-01'
+    title: 'Melancholy at Bar Sinister',
+    excerpt: 'This Saturday see Melancholy at Bar Sinister. Bring your best black clothes.',
+    date: '2025-10-17'
   },
   {
     id: 2,
@@ -14,16 +14,16 @@ const posts = [
   },
   {
     id: 3,
-    title: 'Interview: Behind the studio door',
-    excerpt: 'We talk to Melancholy about the making of the record.',
-    date: '2025-07-28'
+    title: 'Album review: Eris',
+    excerpt: 'A deep dive into the textures and motifs of the new release.',
+    date: '2025-09-01'
   }
 ];
 
 const playlist = [
   { id: 't1', title: 'VIP', src: 'https://open.spotify.com/track/6yUKgDm2hKR04i683jyI9E?si=385afd4d70bf4ba7', artist: 'Melancholy' },
   { id: 't2', title: 'Eris', src: 'https://open.spotify.com/track/1hkeOMjQBepbab9gFcJMbK?si=b1da8ddb89bf42fa', artist: 'Melancholy' },
-  { id: 't3', title: 'La vie est belle', src: 'media/soft-morning.mp3', artist: 'Melancholy' },
+  { id: 't3', title: 'Amy', src: 'media/soft-morning.mp3', artist: 'Melancholy' },
 ];
 
 // Vinyls use the same tracks for demonstration; you can map different previews/full tracks
